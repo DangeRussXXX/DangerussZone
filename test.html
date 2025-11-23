@@ -8,25 +8,31 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Inline styles for the sound buttons */
-    #soundControls {
-      margin-top: 10px;
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      position: relative;
-      z-index: 3;
+    /* Container & Grid */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    #soundOnBtn, #soundOffBtn {
-      padding: 12px 24px;
-      font-size: 18px;
-      border-radius: 8px;
-      border: 2px solid #fff;
-      background: black;
-      color: white;
-      cursor: pointer;
-      transition: background 0.2s;
+    .column {
+      background: rgba(0,0,0,0.3);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #fff;
+      text-align: center;
     }
 
     .video-wrapper {
@@ -34,69 +40,147 @@
       width: 100%;
       padding-bottom: 56.25%;
       height: 0;
-      margin: 20px 0;
-      border-radius: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
-    .video-wrapper iframe {
+    .video-wrapper iframe, 
+    .video-wrapper video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      border: 0;
     }
+
+    /* Buttons */
+    .game-button, .mystery-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff;
+      background: black;
+      transition: background 0.2s;
+    }
+
+    .game-button:hover, .mystery-button:hover {
+      background: #333;
+    }
+
+    /* Sound controls */
+    #soundControls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    #soundOnBtn, #soundOffBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid #fff;
+      background: black;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    body {
+      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+      background: #111;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a.active {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #fff;
+      background: #111;
+    }
+
   </style>
 </head>
-
 <body>
 
 <!-- Navigation -->
 <nav>
   <ul>
+    <li><a href="test.html">TESTING</a></li>
     <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about/about.html">About</a></li> 
-    <li><a href="gallery/gallery.html">Gallery</a></li> 
-    <li><a href="contact/contact.html">Contact</a></li> 
+    <li><a href="about/about.html">About</a></li>
+    <li><a href="gallery/gallery.html">Gallery</a></li>
+    <li><a href="contact/contact.html">Contact</a></li>
   </ul>
 </nav>
 
-
 <header>
   <h1 class="fire-text">🔥 DangeRuss Zone 🔥</h1>
-
   <img src="index/images/HomeFlyingObject.png" alt="Spaceship" class="flying-object">
+</header>
 
-
-<!-- MAIN CONTAINER -->
+<!-- MAIN GRID CONTAINER -->
 <div class="container">
 
-  <!-- COLUMN 1 -->
-  <div class="column first-column scary-column">
-    <img src="images/column1.png" alt="Image 1" class="floating-image">
-
-    <h2 class="scary-header">Enter At Your Own Risk</h2>
-    <p class="scary-text">This webpage is where I do my testing...you have been WARNED!</p>
-
+  <!-- COLUMN 1: Info + Danger Button -->
+  <div class="column">
+    <h2>Enter At Your Own Risk</h2>
+    <p>This webpage is where I do my testing...you have been WARNED!</p>
     <div class="danger-zone">
-      <h2 class="danger-header">⚠️ ENTER OPTION 1 ⚠️</h2>
-      <a href="infected/infected.html" class="danger-button">ENTER NOW</a>
+      <h2>⚠️ ENTER OPTION 1 ⚠️</h2>
+      <a href="infected/infected.html" class="game-button">ENTER NOW</a>
     </div>
   </div>
 
-
-
-  <!-- COLUMN 2 -->
-  <div class="column video-column" style="position:relative; overflow:hidden;">
-
-    
-        <!-- YouTube Channel Link BUTTON -->
-    <a href="https://www.youtube.com/@DangerussZone" 
-       target="_blank" 
-       class="game-button">
+  <!-- COLUMN 2: Feature Video + Sound Controls + YouTube Channel Button -->
+  <div class="column">
+    <a href="https://www.youtube.com/@DangerussZone" target="_blank" class="game-button">
       Visit My YouTube Channel 🎥
     </a>
 
-    <!-- Feature Video -->
     <div class="video-wrapper">
       <video id="featureVideo" autoplay loop muted playsinline>
         <source src="index/video/featurevideo.mp4" type="video/mp4">
@@ -104,97 +188,45 @@
       </video>
     </div>
 
-    <!-- Sound Controls -->
     <div id="soundControls">
       <button id="soundOnBtn">🔊 Sound On</button>
       <button id="soundOffBtn">🔇 Sound Off</button>
     </div>
 
-    <!-- YOUTUBE-VIDEO-1 -->
+    <!-- 3 YouTube Videos -->
     <h1>First</h1>
     <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/jfXxIkeOE8U"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/jfXxIkeOE8U" allowfullscreen></iframe>
     </div>
 
-<!-- YOUTUBE-VIDEO-2 -->
     <h1>Second</h1>
     <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/dvsuKU37Sec"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/dvsuKU37Sec" allowfullscreen></iframe>
     </div>
 
-<!-- YOUTUBE-VIDEO-3 -->
     <h1>Third</h1>
     <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/dvsuKU37Sec"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/dvsuKU37Sec" allowfullscreen></iframe>
     </div>
+  </div>
 
-
-
-  <!-- COLUMN 3 (fixed class) -->
+  <!-- COLUMN 3: Live Stream + Buttons -->
   <div class="column">
-        <!-- YOUTUBE-LIVESTREAM -->
     <h1>Live Stream</h1>
     <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/live_stream?channel=UC_8Kg4SqDyJxKCM56mNM2NTw"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <!-- YOUTUBE-VIDEO-1 -->
-    <h1>First</h1>
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/jfXxIkeOE8U"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=UC_8Kg4SqDyJxKCM56mNM2NTw" allowfullscreen></iframe>
     </div>
 
-<!-- YOUTUBE-VIDEO-2 -->
-    <h1>Second</h1>
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/dvsuKU37Sec"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-<!-- YOUTUBE-VIDEO-3 -->
-    <h1>Third</h1>
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/dvsuKU37Sec"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-
-    
     <div class="button-column">
-      <div class="button-section">
-        <h2>Button 2:</h2>
-        <a href="coin/coin.html" class="game-button">Enter Now 😄</a>
-      </div>
+      <h2>Button 2:</h2>
+      <a href="coin/coin.html" class="game-button">Enter Now 😄</a>
 
-      <div class="button-section">
-        <h2>Option 3:</h2>
-        <a href="mystery/mystery.html" class="mystery-button">Enter the Unknown</a>
-      </div>
+      <h2>Option 3:</h2>
+      <a href="mystery/mystery.html" class="mystery-button">Enter the Unknown</a>
     </div>
-
-  </div> <!-- END COLUMN 3 -->
+  </div>
 
 </div> <!-- END CONTAINER -->
-
-
 
 <!-- SOUND LOGIC -->
 <script>
@@ -212,23 +244,14 @@
   });
 </script>
 
-
-
 <!-- FOOTER -->
-<footer style="padding: 40px 20px; text-align: center; color: #fff;">
+<footer>
   <h2>Thanks for visiting ✌️💛</h2>
   <p>Crafted with fun and a bit of magic ✨</p>
-
   <div style="margin-bottom: 20px;">
     <a href="#" style="color: #fff; margin: 0 10px;">PayPal</a>
     <a href="#" style="color: #fff; margin: 0 10px;">Zelle</a>
     <a href="#" style="color: #fff; margin: 0 10px;">Cash App</a>
   </div>
-
   <small>© 2025 💥DangeRussProductions💥 — All rights reserved.</small>
 </footer>
-
-</header>
-
-</body>
-</html>
