@@ -45,7 +45,7 @@ nav a:hover {
     padding: 10px 0;
     font-size: 1.2rem;
     font-weight: bold;
-    animation: scrollMessage 5s linear infinite;
+    animation: scrollMessage 15s linear infinite;
 }
 
 .scrolling-message a {
