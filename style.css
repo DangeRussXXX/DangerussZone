@@ -1,7 +1,7 @@
 /* ------------------ SCROLLING MESSAGE ------------------ */
 .scrolling-message {
     position: absolute;
-    bottom: 0;
+    bottom: 100;
     left: -100%;  /* Start completely off the left side */
     width: auto;  /* Make sure width is based on content size */
     white-space: nowrap; /* Prevent the text from wrapping to the next line */
