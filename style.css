@@ -1,38 +1,10 @@
-/* ------------------ NAVIGATION-TABS ------------------ */
+/* ------------------ NAVBAR ------------------ */
 nav {
     background: #222;
     padding: 10px 0;
     position: relative;
     overflow: hidden; /* Makes sure the scrolling message hides when it leaves the container */
 }
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-nav a.active {
-  font-weight: bold;
-  color: #ff6600;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
 /* ------------------ SCROLLING MESSAGE ------------------ */
 .scrolling-message {
     position: absolute;
