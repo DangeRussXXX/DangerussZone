@@ -1,360 +1,235 @@
-/* ===========================
-NAVIGATION
-=========================== */
-nav {
-    background: #222;
-    padding: 10px 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DangeRussZone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
+  <style>
+    /* Inline styles for the sound buttons */
+    #soundControls {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      position: relative;
+      z-index: 3;
+    }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
+    #soundOnBtn, #soundOffBtn {
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 2px solid #fff;
+      background: black;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
 
-nav a.active {
-    font-weight: bold;
-    color: #ff6600;
-}
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
 
-nav a:hover {
-    text-decoration: underline;
-}
+<body>
 
-/* ===========================
-HEADER AND FIRE TEXT
-=========================== */
-header {
-    text-align: center;
-    position: relative;
-    padding: 60px 20px;
-    background: url('index/images/lightning.png') center/cover no-repeat;
-}
+<!-- Navigation -->
+<nav>
+  <ul>
+    <li><a href="test.html">TESTING</a></li> 
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about/about.html">About</a></li> 
+    <li><a href="gallery/gallery.html">Gallery</a></li> 
+    <li><a href="contact/contact.html">Contact</a></li> 
+  </ul>
+</nav>
 
-.fire-text {
-    font-size: 64px;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    background: linear-gradient(45deg, #ff0000, #ff9900, #ffff00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff6600, 0 0 20px #ffff00;
-    animation: flicker 1s infinite alternate;
-    position: relative;
-    z-index: 1;
-}
 
-@keyframes flicker {
-    0%,100% { text-shadow: 0 0 5px #ff0000,0 0 10px #ff6600,0 0 20px #ffff00; }
-    25% { text-shadow: 0 0 8px #ff3300,0 0 15px #ff9900,0 0 25px #ffff33; }
-    50% { text-shadow: 0 0 4px #ff0000,0 0 8px #ff6600,0 0 15px #ffff00; }
-    75% { text-shadow: 0 0 10px #ff3300,0 0 18px #ff9933,0 0 28px #ffff66; }
-}
+<header>
+  <h1 class="fire-text">🔥 DangeRuss Zone 🔥</h1>
 
-/* ===========================
-FLYING OBJECT
-=========================== */
-.flying-object {
-    position: absolute;
-    width: 20%;
-    max-width: 500px;
-    top: 2%;
-    left: 10%;
-    z-index: 5;
-    pointer-events: none;
-    transition: transform 0.3s ease;
-    animation: flyAcross 7.5s linear infinite;
-}
+  <img src="index/images/HomeFlyingObject.png" alt="Spaceship" class="flying-object">
 
-@keyframes flyAcross {
-    0%   { transform: translateX(0) rotate(15deg); }
-    25%  { transform: translateX(25vw) rotate(0deg); }
-    50%  { transform: translateX(50vw) rotate(10deg); }
-    75%  { transform: translateX(75vw) rotate(15deg); }
-    100% { transform: translateX(100vw) rotate(15deg); }
-}
 
-/* ===========================
-CONTAINER & COLUMNS (FLEX)
-=========================== */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-}
+<!-- MAIN CONTAINER -->
+<div class="container">
 
-.column {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+  <!-- COLUMN 1 -->
+  <div class="column first-column scary-column">
+    <img src="images/column1.png" alt="Image 1" class="floating-image">
 
-.video-column {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+    <h2 class="scary-header">Enter At Your Own Risk</h2>
+    <p class="scary-text">This webpage is where I do my testing...you have been WARNED!</p>
 
-/* ===========================
-SCARY COLUMN
-=========================== */
-.scary-column {
-    text-align: center;
-    color: #ff6666;
-    font-family: 'Creepster', cursive;
-    background: url('index/images/Column1Swamp.png') center/cover no-repeat;
-    border-radius: 12px;
-    padding: 20px;
-    position: relative;
-    overflow: visible;
-}
+    <div class="danger-zone">
+      <h2 class="danger-header">⚠️ ENTER OPTION 1 ⚠️</h2>
+      <a href="infected/infected.html" class="danger-button">ENTER NOW</a>
+    </div>
+  </div>
 
-.floating-image {
-    opacity: 0;
-    animation: fadeIn 10s ease-in-out forwards;
-}
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
 
-.scary-column::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: url('images/stars.png') repeat;
-    opacity: 0.5;
-    animation: moveStars 60s linear infinite;
-    pointer-events: none;
-    z-index: -1;
-}
+  <!-- COLUMN 2 -->
+  <div class="column video-column" style="position:relative; overflow:hidden;">
 
-.scary-header, .scary-text {
-    position: relative;
-    z-index: 1;
-}
+    
+        <!-- YouTube Channel Link BUTTON -->
+    <a href="https://www.youtube.com/@DangerussZone" 
+       target="_blank" 
+       class="game-button">
+      Visit My YouTube Channel 🎥
+    </a>
 
-@keyframes flickerScary {
-    0%,100% { opacity: 1; text-shadow: 0 0 5px #ff0000,0 0 15px #660000,0 0 30px black; }
-    50% { opacity: 0.8; text-shadow: 0 0 10px #ff3300,0 0 20px #660000,0 0 40px black; }
-}
+    <!-- Feature Video -->
+    <div class="video-wrapper">
+      <video id="featureVideo" autoplay loop muted playsinline>
+        <source src="index/video/featurevideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-.scary-header { animation: flickerScary 1.5s infinite alternate; font-size: 48px; }
-.scary-text { animation: flickerScary 2s infinite alternate; font-size: 18px; }
+    <!-- Sound Controls -->
+    <div id="soundControls">
+      <button id="soundOnBtn">🔊 Sound On</button>
+      <button id="soundOffBtn">🔇 Sound Off</button>
+    </div>
 
-@keyframes moveStars {
-    0% { background-position: 0 0; }
-    100% { background-position: 1000px 1000px; }
-}
+    <!-- YOUTUBE-VIDEO-1 -->
+    <h1>First</h1>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/jfXxIkeOE8U"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-/* ===========================
-VIDEO WRAPPERS
-=========================== */
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 10px;
-    background: black;
-}
+<!-- YOUTUBE-VIDEO-2 -->
+    <h1>Second</h1>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/dvsuKU37Sec"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-.video-wrapper iframe,
-.video-wrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+<!-- YOUTUBE-VIDEO-3 -->
+    <h1>Third</h1>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/dvsuKU37Sec"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-/* For feature video if you want smaller height */
-.video-wrapper.feature {
-    padding-bottom: 28.125%;
-}
 
-/* ===========================
-YOUTUBE 3-COLUMN GRID INSIDE VIDEO COLUMN
-=========================== */
-.youtube-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
 
-.youtube-grid .video-wrapper {
-    flex: 1;
-    min-width: 200px;
-    max-width: 32%;
-}
+  <!-- COLUMN 3 (fixed class) -->
+  <div class="column">
+        <!-- YOUTUBE-LIVESTREAM -->
+    <h1>Live Stream</h1>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/live_stream?channel=UC_8Kg4SqDyJxKCM56mNM2NTw"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <!-- YOUTUBE-VIDEO-1 -->
+    <h1>First</h1>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/jfXxIkeOE8U"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-/* ===========================
-SOUND BUTTONS
-=========================== */
-#soundControls {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    position: relative;
-    z-index: 3;
-}
+<!-- YOUTUBE-VIDEO-2 -->
+    <h1>Second</h1>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/dvsuKU37Sec"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-#soundOnBtn, #soundOffBtn {
-    padding: 12px 24px;
-    font-size: 18px;
-    border-radius: 8px;
-    border: 2px solid #fff;
-    background: black;
-    color: white;
-    cursor: pointer;
-    transition: background 0.2s;
-}
+<!-- YOUTUBE-VIDEO-3 -->
+    <h1>Third</h1>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/dvsuKU37Sec"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-#soundOnBtn:hover, #soundOffBtn:hover {
-    background: #333;
-}
 
-/* ===========================
-BUTTONS
-=========================== */
-.button-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
+    
+    <div class="button-column">
+      <div class="button-section">
+        <h2>Button 2:</h2>
+        <a href="coin/coin.html" class="game-button">Enter Now 😄</a>
+      </div>
 
-.danger-button {
-    display: inline-block;
-    padding: 18px 40px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    background: repeating-linear-gradient(45deg, #ff0000, #ff0000 10px, #660000 10px, #660000 20px);
-    border: 3px solid #ff0000;
-    border-radius: 10px;
-    box-shadow: 0 0 15px red, 0 0 40px #ff0000;
-    transition: 0.2s ease-in-out;
-    animation: pulse 1.2s infinite alternate ease-in-out;
-}
+      <div class="button-section">
+        <h2>Option 3:</h2>
+        <a href="mystery/mystery.html" class="mystery-button">Enter the Unknown</a>
+      </div>
+    </div>
 
-@keyframes pulse {
-    0%{ transform:scale(1); box-shadow:0 0 20px red; }
-    100%{ transform:scale(1.07); box-shadow:0 0 35px red; }
-}
+  </div> <!-- END COLUMN 3 -->
 
-.danger-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px #ff3300,0 0 60px #ff0000;
-}
+</div> <!-- END CONTAINER -->
 
-.game-button {
-    display: inline-block;
-    padding: 16px 36px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    background: linear-gradient(135deg, #ffcc33, #ff66cc);
-    border: 3px solid #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px #ff99cc;
-    transition: all 0.2s ease;
-}
 
-.game-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow:0 10px #ff99cc;
-    background: linear-gradient(135deg, #ffeb66, #ff99ff);
-}
 
-.game-button:active {
-    transform: translateY(2px);
-    box-shadow:0 4px #ff99cc;
-}
+<!-- SOUND LOGIC -->
+<script>
+  const video = document.getElementById('featureVideo');
+  const soundOnBtn = document.getElementById('soundOnBtn');
+  const soundOffBtn = document.getElementById('soundOffBtn');
 
-.mystery-button {
-    display: inline-block;
-    padding: 16px 36px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #eee;
-    text-decoration: none;
-    background: linear-gradient(135deg, #1a1a1a, #3a0a4f);
-    border: 2px solid #6b1aff;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(107,26,255,0.6);
-    position: relative;
-    overflow: hidden;
-}
+  soundOnBtn.addEventListener('click', () => {
+    video.muted = false;
+    video.play();
+  });
 
-.mystery-button::before {
-    content:'';
-    position:absolute;
-    top:-50%; left:-50%;
-    width:200%; height:200%;
-    background: radial-gradient(circle, rgba(107,26,255,0.2) 0%, transparent 70%);
-    animation: glowMove 3s infinite linear;
-    pointer-events: none;
-}
+  soundOffBtn.addEventListener('click', () => {
+    video.muted = true;
+  });
+</script>
 
-.mystery-button:hover {
-    transform: scale(1.05);
-    box-shadow:0 0 30px rgba(107,26,255,0.9);
-    color:#fff;
-}
 
-.mystery-button:active {
-    transform: scale(0.98);
-    box-shadow:0 0 15px rgba(107,26,255,0.6);
-}
 
-@keyframes glowMove {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+<!-- FOOTER -->
+<footer style="padding: 40px 20px; text-align: center; color: #fff;">
+  <h2>Thanks for visiting ✌️💛</h2>
+  <p>Crafted with fun and a bit of magic ✨</p>
 
-/* ===========================
-FOOTER
-=========================== */
-footer {
-    padding: 40px 20px;
-    text-align: center;
-    color: #fff;
-}
+  <div style="margin-bottom: 20px;">
+    <a href="#" style="color: #fff; margin: 0 10px;">PayPal</a>
+    <a href="#" style="color: #fff; margin: 0 10px;">Zelle</a>
+    <a href="#" style="color: #fff; margin: 0 10px;">Cash App</a>
+  </div>
 
-footer a {
-    margin: 0 10px;
-    color: #fff;
-    text-decoration: none;
-}
+  <small>© 2025 💥DangeRussProductions💥 — All rights reserved.</small>
+</footer>
 
-footer small {
-    display: block;
-    margin-top: 10px;
-}
+</header>
+
+</body>
+</html>
