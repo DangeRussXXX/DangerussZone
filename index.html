@@ -39,12 +39,10 @@
   <p class="scary-text">This webpage is where I do my testing...you have been WARNED!</p>
 
   <div class="danger-zone">
-    <h2 class="danger-header">⚠️ ENTER OPTION 1 ⚠️</h2>
-    <a href="test.html" class="danger-button">ENTER NOW</a>
+    <h2 class="danger-header"></h2>
+    <a href="test.html" class="danger-button">⚠️ENTER NOW⚠️</a>
   </div>
 </div>
-
-
 
   <!-- COLUMN 2 -->
   <style>
@@ -57,7 +55,6 @@
       position: relative;
       z-index: 3;
     }
-
     #soundOnBtn, #soundOffBtn {
       padding: 12px 24px;
       font-size: 18px;
@@ -88,13 +85,12 @@
   </style>
   <div class="column video-column" style="position:relative; overflow:hidden;">
 
-    
-        <!-- YouTube Channel Link BUTTON -->
-    <a href="https://www.youtube.com/@DangerussZone" 
-       target="_blank" 
-       class="game-button">
-      Visit My YouTube Channel 🎥
-    </a>
+
+    <!-- Sound Controls -->
+    <div id="soundControls">
+      <button id="soundOnBtn">🔊 Sound On</button>
+      <button id="soundOffBtn">🔇 Sound Off</button>
+    </div>
 
     <!-- Feature Video -->
     <div class="video-wrapper">
@@ -109,8 +105,15 @@
       <button id="soundOnBtn">🔊 Sound On</button>
       <button id="soundOffBtn">🔇 Sound Off</button>
     </div>
+    
+        <!-- YouTube Channel Link BUTTON -->
+    <a href="https://www.youtube.com/@DangerussZone" 
+       target="_blank" 
+       class="game-button">
+      Visit My YouTube Channel 🎥
+    </a>
 
-   
+    
     <!-- YouTube Videos in 3-column layout -->
     <div style="display:flex; flex-wrap:wrap; gap:10px;">
       <div style="flex:1 1 calc(33% - 10px);">
