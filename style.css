@@ -18,7 +18,7 @@ nav {
     padding: 10px 0;
     font-size: 1.2rem;
     font-weight: bold;
-    animation: scrollMessage 5s linear infinite;  /* Speed up the animation */
+    animation: scrollMessage 15s linear infinite;  /* Speed up the animation */
     top: 80%;  /* Adjust to avoid cutting off at the top */
     z-index: 9999; /* Ensure it stays on top of other content */
 }
