@@ -5,12 +5,11 @@ nav {
     position: relative;
     overflow: hidden; /* Makes sure the scrolling message hides when it leaves the container */
 }
-
 /* ------------------ SCROLLING MESSAGE ------------------ */
 .scrolling-message {
     position: absolute;
     bottom: 0;
-    right: 0;  /* Start from the rightmost side of the screen */
+    left: -100%;  /* Start completely off the left side of the screen */
     width: 100%;  /* Ensure it takes up the entire width of the screen */
     background: #ff6600;
     color: white;
@@ -35,12 +34,16 @@ nav {
 /* Scrolling Animation */
 @keyframes scrollMessage {
     0% {
-        transform: translateX(0); /* Start from the right side of the screen */
+        transform: translateX(-100%); /* Start completely off the screen to the left */
+    }
+    50% {
+        transform: translateX(0); /* Move to the center (fully visible) */
     }
     100% {
-        transform: translateX(-100%); /* Move off the screen to the left */
+        transform: translateX(100%); /* Move off the screen to the right */
     }
 }
+
 
 
 /* ------------------ FIRE HEADER WITH LIGHTNING ------------------ */
