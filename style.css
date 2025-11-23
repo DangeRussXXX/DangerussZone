@@ -6,7 +6,6 @@ nav {
     overflow: hidden; /* Makes sure the scrolling message hides when it leaves the container */
 }
 
-
 /* ------------------ SCROLLING MESSAGE ------------------ */
 .scrolling-message {
     position: absolute;
@@ -37,6 +36,9 @@ nav {
 @keyframes scrollMessage {
     0% {
         transform: translateX(-100%); /* Start completely off the screen to the left */
+    }
+    50% {
+        transform: translateX(0); /* Move to the center (fully visible) */
     }
     100% {
         transform: translateX(100%); /* Move off the screen to the right */
