@@ -34,6 +34,39 @@ nav a:hover {
 }
 
 
+/* ------------------ SCROLLING MESSAGE ------------------ */
+.scrolling-message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ff6600;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: scrollMessage 15s linear infinite;
+}
+
+.scrolling-message a {
+    color: white;
+    text-decoration: none;
+}
+
+.scrolling-message a:hover {
+    text-decoration: underline;
+}
+
+/* Scrolling Animation */
+@keyframes scrollMessage {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 /* ------------------ FIRE HEADER WITH LIGHTNING ------------------ */
 
