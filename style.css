@@ -54,7 +54,6 @@
 
 /* ------------------ NAVIGATION-TABS ------------------ */
 nav {
-    background: #222;
     padding: 10px 0;
     position: relative;
     overflow: hidden; /* Makes sure the scrolling message hides when it leaves the container */
