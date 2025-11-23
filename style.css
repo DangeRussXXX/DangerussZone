@@ -54,7 +54,7 @@ Flying image styling
   position: absolute;
   width: 500px;
   height: auto;
-  top: 0.5%;
+  top: 2%;
   left: 10%;
   z-index: 5;
   pointer-events: none;
