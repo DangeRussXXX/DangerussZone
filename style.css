@@ -54,31 +54,32 @@ Flying image styling
   position: absolute;
   width: 500px;
   height: auto;
-  top: -88px;
-  left: 10%;
+  top: 0;           /* starting at the top of the header */
+  left: 0;          /* start from left edge */
   z-index: 5;
   pointer-events: none;
   transition: transform 0.3s ease;
-  animation: flyAcross 10s linear infinite;
+  animation: flyAcross 7.5s linear infinite;
 }
 
 @keyframes flyAcross {
   0% {
-    transform: translateX(0) rotate(15deg); /* Starting point */
+    transform: translate(0, -50px) rotate(15deg); /* move up 50px */
   }
   25% {
-    transform: translateX(25vw) rotate(0deg); /* Tilt up */
+    transform: translate(25vw, -50px) rotate(0deg);
   }
   50% {
-    transform: translateX(50vw) rotate(10deg); /* Tilt down */
+    transform: translate(50vw, -50px) rotate(10deg);
   }
   75% {
-    transform: translateX(75vw) rotate(15deg); /* Tilt up again */
+    transform: translate(75vw, -50px) rotate(15deg);
   }
   100% {
-    transform: translateX(100vw) rotate(15deg); /* Reset to original position */
+    transform: translate(100vw, -50px) rotate(15deg);
   }
 }
+
 
 
 /* ------------------ FIRE-TEXT ------------------ */
