@@ -11,15 +11,17 @@ nav {
 .scrolling-message {
     position: absolute;
     bottom: 0;
-    left: 0%;  /* Start completely off the left side of the screen */
-    width: 25%;  /* Ensure it takes up the entire width of the screen */
+    left: -100%;  /* Start completely off the left side of the screen */
+    width: 100%;  /* Ensure it takes up the entire width of the screen */
     background: #ff6600;
     color: white;
-    text-align: left;
+    text-align: center;
     padding: 10px 0;
     font-size: 1.2rem;
     font-weight: bold;
     animation: scrollMessage 5s linear infinite;  /* Speed up the animation */
+    top: 80%;  /* Adjust to avoid cutting off at the top */
+    z-index: 9999; /* Ensure it stays on top of other content */
 }
 
 .scrolling-message a {
@@ -27,11 +29,9 @@ nav {
     text-decoration: none;
 }
 
-.scrolling-message:hover {
-    background: #ff9933; /* Change color when hovered */
-    text-decoration: underline; /* Add an underline on hover */
+.scrolling-message a:hover {
+    text-decoration: underline;
 }
-
 
 /* Scrolling Animation */
 @keyframes scrollMessage {
