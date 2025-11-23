@@ -300,9 +300,10 @@ Flying image styling
 
 .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  width: 100%;
+  padding-bottom: 56.25%;
   height: 0;
-  overflow: hidden;
+  margin: 20px 0;
 }
 
 .video-wrapper iframe {
