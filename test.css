@@ -1,39 +1,44 @@
-/* ------------------ CONTINUOUS SCROLLING MESSAGE ------------------ */
+/* ------------------ TOP-LAYER CONTINUOUS SCROLLING MESSAGE ------------------ */
 .scrolling-message {
-    position: fixed;       /* Stays on screen */
-    top: 20px;             /* Distance from top */
+    position: fixed;        /* Stays visible */
+    top: 0;                 /* Stick to top */
     left: 0;
     width: 100%;
     overflow: hidden;
-    white-space: nowrap;
-    z-index: 9999;
-    background: rgba(0,0,0,0.3); /* Optional semi-transparent background */
+    background: rgba(0,0,0,0.5); /* Semi-transparent background for visibility */
     padding: 10px 0;
+    z-index: 99999;         /* On top of everything */
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
 }
 
-.scrolling-message .scrolling-text {
+/* The scrolling container */
+.scrolling-message .ticker-track {
+    display: inline-flex;
+    animation: scroll-ticker 15s linear infinite;
+}
+
+/* Individual message styling */
+.scrolling-message .ticker-track a {
     display: inline-block;
-    padding-right: 100%;      /* Space between repeated messages */
+    margin-right: 50px;          /* Space between repeats */
     color: white;
     font-size: 2rem;
     font-weight: bold;
-    text-shadow: 0 0 5px orange, 0 0 10px orange;
-    animation: scroll 15s linear infinite;
-}
-
-.scrolling-message a {
-    color: white;
     text-decoration: none;
+    text-shadow: 0 0 5px orange, 0 0 10px orange;
 }
 
-.scrolling-message a:hover {
+.scrolling-message .ticker-track a:hover {
     color: orange;
     text-decoration: underline;
 }
 
-@keyframes scroll {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+/* Animation */
+@keyframes scroll-ticker {
+    0% { transform: translateX(100%); }   /* Start completely off right */
+    100% { transform: translateX(-100%); } /* Move completely left */
 }
 
 
