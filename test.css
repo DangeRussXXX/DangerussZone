@@ -1,42 +1,41 @@
-/* ------------------ SIMPLE SCROLLING MESSAGE ------------------ */
+/* ------------------ CONTINUOUS SCROLLING MESSAGE ------------------ */
 .scrolling-message {
-    position: fixed;       /* Fixed so it stays on screen */
+    position: fixed;       /* Stays on screen */
     top: 20px;             /* Distance from top */
-    left: 0;               /* Start at the left edge */
-    width: 100%;           /* Full width */
-    white-space: nowrap;    /* Prevent line breaks */
-    overflow: hidden;       /* Hide overflow */
-    text-align: center;
-    font-size: 2rem;       /* Adjust as needed */
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 0 5px orange, 0 0 10px orange;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
     z-index: 9999;
+    background: rgba(0,0,0,0.3); /* Optional semi-transparent background */
+    padding: 10px 0;
 }
 
-/* Make the inner text scroll */
-.scrolling-message span {
+.scrolling-message .scrolling-text {
     display: inline-block;
-    padding-left: 100%;       /* Start off-screen to the right */
-    animation: scroll 10s linear infinite;
+    padding-right: 100%;      /* Space between repeated messages */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px orange, 0 0 10px orange;
+    animation: scroll 15s linear infinite;
 }
 
-/* Scroll animation */
-@keyframes scroll {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); } /* Moves to the left off-screen */
-}
-
-/* Optional link styling */
 .scrolling-message a {
     color: white;
     text-decoration: none;
 }
 
 .scrolling-message a:hover {
-    text-decoration: underline;
     color: orange;
+    text-decoration: underline;
 }
+
+@keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
 
 /* ------------------ NAVIGATION-TABS ------------------ */
 nav {
