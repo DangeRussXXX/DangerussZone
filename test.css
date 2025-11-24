@@ -34,7 +34,7 @@
 /* Scrolling Animation */
 @keyframes scrollMessage {
     0% {
-        transform: translateX(-100%); /* Start off the screen to the left */
+        transform: translateX(0%); /* Start off the screen to the left */
     }
     100% {
         transform: translateX(100%); /* Move off the screen to the right */
