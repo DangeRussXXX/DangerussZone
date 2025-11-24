@@ -9,12 +9,19 @@
 </head>
 
 <body>
+<nav style="position: relative; height: 100px;">
+    <div class="scrolling-message">
+        <a href="infected/infected.html">🎉 Click for your free prize! 🎉</a>
+    </div>
+</nav>
 
 
+  
 <!-- HEADER-START -->
 <header>
   <h1 class="fire-text">🔥 DangeRuss Zone 🔥</h1>
   <img src="index/images/HomeFlyingObject.png" alt="Spaceship" class="flying-object">
+  
 
 
 <!-- MAIN CONTAINER -->
@@ -128,24 +135,7 @@
   <p>Crafted with fun and a bit of magic ✨</p>
   <small>© 2025 💥DangeRussProductions💥 — All rights reserved.</small>
 </footer>
-<!-- VIEW-COUNTER -->
-  <div class="view-counter">
-  <span class="label">Views:</span>
-  <span id="viewCount" class="count">0</span>
-</div>
 
-    <!-- COUNTER-API -->
-<script>
-fetch("https://api.countapi.xyz/hit/https://dangerussxxx.github.io/DangeRussZone/viewCounter")
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("viewCount").textContent = data.value;
-  });
-</script>
-
-
-
-  
 <!-- SOUND SCRIPT -->
 <script>
   const video = document.getElementById('featureVideo');
@@ -161,6 +151,7 @@ fetch("https://api.countapi.xyz/hit/https://dangerussxxx.github.io/DangeRussZone
     video.muted = true;
   });
 </script>
+  
 </header>
 <!-- HEADER-END -->
 </body>
