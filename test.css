@@ -1,44 +1,32 @@
-/* ------------------ TOP-LAYER CONTINUOUS SCROLLING MESSAGE ------------------ */
+/* ------------------ SCROLLING MESSAGE LIKE FLYING OBJECT ------------------ */
 .scrolling-message {
-    position: fixed;        /* Stays visible */
-    top: 0;                 /* Stick to top */
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    background: rgba(0,0,0,0.5); /* Semi-transparent background for visibility */
-    padding: 10px 0;
-    z-index: 99999;         /* On top of everything */
+    position: absolute;       /* Like flying object */
+    top: 10%;                 /* Vertical position */
+    left: -100%;              /* Start off-screen left */
     white-space: nowrap;
-    display: flex;
-    align-items: center;
-}
-
-/* The scrolling container */
-.scrolling-message .ticker-track {
-    display: inline-flex;
-    animation: scroll-ticker 15s linear infinite;
-}
-
-/* Individual message styling */
-.scrolling-message .ticker-track a {
-    display: inline-block;
-    margin-right: 50px;          /* Space between repeats */
-    color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    text-decoration: none;
-    text-shadow: 0 0 5px orange, 0 0 10px orange;
+    color: white;
+    text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 30px #ff9900;
+    z-index: 1000;            /* Above other content */
+    animation: flyMessage 15s linear infinite;  /* Continuous scroll */
 }
 
-.scrolling-message .ticker-track a:hover {
-    color: orange;
+/* Links inside scrolling message */
+.scrolling-message a {
+    color: white;
+    text-decoration: none;
+}
+
+.scrolling-message a:hover {
+    color: #ffcc00;
     text-decoration: underline;
 }
 
-/* Animation */
-@keyframes scroll-ticker {
-    0% { transform: translateX(100%); }   /* Start completely off right */
-    100% { transform: translateX(-100%); } /* Move completely left */
+/* Animation: scroll from left to right, looping */
+@keyframes flyMessage {
+    0% { transform: translateX(-100%); }  /* Start completely left */
+    100% { transform: translateX(100vw); } /* End completely right */
 }
 
 
