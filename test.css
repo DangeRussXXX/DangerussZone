@@ -39,34 +39,6 @@ nav {
     overflow: hidden; /* Ensures scrolling message is clipped when outside */
 }
 
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-nav a.active {
-  font-weight: bold;
-  color: #ff6600; /* or any color you prefer */
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
 /* ------------------ FIRE HEADER WITH LIGHTNING ------------------ */
 header {
   text-align: center;
