@@ -8,7 +8,7 @@
     color: white;
     text-align: center;
     padding: 15px 0;  /* Padding for extra space around text */
-    font-size: 50rem; /* Font size for better visibility */
+    font-size: 5rem; /* Font size for better visibility */
     font-weight: bold;
     animation: scrollMessage 10s linear infinite;  /* Continuous scroll */
     top: 50%;  /* Adjust to avoid cutting off at the top */
