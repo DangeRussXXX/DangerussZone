@@ -1,44 +1,41 @@
-/* ------------------ SCROLLING MESSAGE ------------------ */
+/* ------------------ SIMPLE SCROLLING MESSAGE ------------------ */
 .scrolling-message {
-    position: absolute;
-    bottom: 100px; /* Fixed units */
-    left: -100%;  /* Start completely off the left side */
-    width: 100vw;  /* Set to viewport width */
-    white-space: nowrap; /* Prevent the text from wrapping */
-    color: white;
+    position: fixed;       /* Fixed so it stays on screen */
+    top: 20px;             /* Distance from top */
+    left: 0;               /* Start at the left edge */
+    width: 100%;           /* Full width */
+    white-space: nowrap;    /* Prevent line breaks */
+    overflow: hidden;       /* Hide overflow */
     text-align: center;
-    padding: 15px 0;  /* Padding for extra space around text */
-    font-size: 5rem; /* Reduced font size */
+    font-size: 2rem;       /* Adjust as needed */
     font-weight: bold;
-    animation: scrollMessage 5s linear infinite;  /* Continuous scroll */
-    top: 25%;  /* Adjust to avoid cutting off at the top */
-    z-index: 9999; /* Ensure it stays on top */
-    text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 30px #ff9900; /* Glowing effect */
-    transform-origin: center;
-    overflow: hidden; /* Make sure no overflow happens */
+    color: white;
+    text-shadow: 0 0 5px orange, 0 0 10px orange;
+    z-index: 9999;
 }
 
-/* Link styling within the scrolling message */
+/* Make the inner text scroll */
+.scrolling-message span {
+    display: inline-block;
+    padding-left: 100%;       /* Start off-screen to the right */
+    animation: scroll 10s linear infinite;
+}
+
+/* Scroll animation */
+@keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); } /* Moves to the left off-screen */
+}
+
+/* Optional link styling */
 .scrolling-message a {
     color: white;
     text-decoration: none;
-    font-weight: normal;
-    text-transform: uppercase;
 }
 
 .scrolling-message a:hover {
     text-decoration: underline;
-    color: #ffcc00; /* Highlight color on hover */
-}
-
-/* Scrolling Animation */
-@keyframes scrollMessage {
-    0% {
-        transform: translateX(0%); /* Start off the screen to the left */
-    }
-    100% {
-        transform: translateX(100%); /* Move off the screen to the right */
-    }
+    color: orange;
 }
 
 /* ------------------ NAVIGATION-TABS ------------------ */
