@@ -281,7 +281,7 @@ header {
   font-weight: bold;
   color: white;
   text-decoration: none;
-  background: linear-gradient(135deg, #ffcc33, #ff66cc);
+  background: linear-gradient(135deg, #ffcc33, #ffcc33);
   border: 3px solid #fff;
   border-radius: 12px;
   box-shadow: 0 6px #ff99cc;
