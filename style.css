@@ -1,44 +1,32 @@
-/* ------------------ SCROLLING MESSAGE ------------------ */
+/* ------------------ SCROLLING MESSAGE LIKE FLYING OBJECT ------------------ */
 .scrolling-message {
-    position: absolute;
-    bottom: 100;
-    left: -100%;  /* Start completely off the left side */
-    width: auto;  /* Make sure width is based on content size */
-    white-space: nowrap; /* Prevent the text from wrapping to the next line */
-    color: white;
-    text-align: center;
-    padding: 15px 0;  /* Padding for extra space around text */
-    font-size: 50rem; /* Font size for better visibility */
+    position: absolute;       /* Like flying object */
+    top: 50%;                 /* Vertical position */
+    left: 0%;              /* Start off-screen left */
+    white-space: nowrap;
+    font-size: 2.5rem;
     font-weight: bold;
-    animation: scrollMessage 10s linear infinite;  /* Continuous scroll */
-    top: 50%;  /* Adjust to avoid cutting off at the top */
-    z-index: 9999; /* Ensure it stays on top of other content */
-    text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 30px #ff9900; /* Glowing effect */
-    transform-origin: center;
-    overflow: hidden; /* Make sure no overflow happens */
+    color: white;
+    text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 30px #ff9900;
+    z-index: 1000;            /* Above other content */
+    animation: flyMessage 15s linear infinite;  /* Continuous scroll */
 }
 
-/* Link styling within the scrolling message */
+/* Links inside scrolling message */
 .scrolling-message a {
     color: white;
     text-decoration: none;
-    font-weight: normal; /* Keep the link from being too bold */
-    text-transform: uppercase;
 }
 
 .scrolling-message a:hover {
+    color: #ffcc00;
     text-decoration: underline;
-    color: #ffcc00; /* Highlight color on hover */
 }
 
-/* Scrolling Animation */
-@keyframes scrollMessage {
-    0% {
-        transform: translateX(-100%); /* Start off the screen to the left */
-    }
-    100% {
-        transform: translateX(100%); /* Move off the screen to the right */
-    }
+/* Animation: scroll from left to right, looping */
+@keyframes flyMessage {
+    0% { transform: translateX(-100%); }  /* Start completely left */
+    100% { transform: translateX(100vw); } /* End completely right */
 }
 
 
@@ -47,8 +35,10 @@ nav {
     background: #222;
     padding: 10px 0;
     position: relative;
-    overflow: hidden; /* Makes sure the scrolling message hides when it leaves the container */
+    z-index: 1; /* Ensure nav has lower z-index */
+    overflow: hidden; /* Ensures scrolling message is clipped when outside */
 }
+
 
 nav ul {
     margin: 0;
@@ -81,7 +71,7 @@ nav a:hover {
 header {
   text-align: center;
   position: relative;
-  padding: 60px 20px;
+  padding: 120px;
   background: url('index/images/lightning.png') center/cover no-repeat;
 }
 
@@ -89,7 +79,7 @@ header {
   position: absolute;
   width: 500px;
   height: auto;
-  top: 1%; /* Adjust this for vertical position */
+  top: 2%; /* Adjust this for vertical position */
   left: 0;
   z-index: 5;
   pointer-events: none;
