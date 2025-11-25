@@ -51,7 +51,34 @@
     </div>
 
   
-    <!-- YOUTUBE-LIVESTREAM -->
+<!-- SCROLLING TEXT -->
+<div style="
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #111;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 20px;
+  border-bottom: 2px solid #333;
+  position: relative;">
+  
+  <div style="
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 10s linear infinite;">
+    Last Livestream &nbsp; • &nbsp; Last Livestream &nbsp; • &nbsp; Last Livestream
+  </div>
+</div>
+
+<style>
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+<!-- YOUTUBE-LIVESTREAM -->
 <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000;">
   <iframe
     src="https://www.youtube.com/embed/RTRZauxQRxs"
@@ -63,6 +90,7 @@
     style="position:absolute; top:0; left:0; width:100%; height:100%;">
   </iframe>
 </div>
+
 
 
 
