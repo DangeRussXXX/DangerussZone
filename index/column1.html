@@ -13,16 +13,17 @@
         background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff8800);
         background-size: 600% 600%;
         animation: trippyBackground 10s ease infinite;
+        transition: transform 2s ease-in-out;
     }
 
-    /* Background color-morphing animation */
+    /* Background color-morph animation */
     @keyframes trippyBackground {
         0%   { background-position: 0% 50%; }
         50%  { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
 
-    /* Flying text class */
+    /* Flying text */
     .flying-text {
         position: absolute;
         font-size: 3rem;
@@ -30,8 +31,9 @@
         color: white;
         text-shadow: 0 0 15px #000;
         animation: flyText 8s linear infinite;
-        pointer-events: none;
         white-space: nowrap;
+        cursor: pointer;
+        pointer-events: auto;
     }
 
     @keyframes flyText {
@@ -53,22 +55,71 @@
         50%  { transform: translate(80vw, -20vh) rotate(180deg); }
         100% { transform: translate(0vw, 100vh) rotate(360deg); }
     }
+
+    /* Portal effect */
+    #portal {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #ffffff 0%, #00ffff 40%, #8a2be2 70%, #000000 100%);
+        transform: translate(-50%, -50%) scale(0);
+        filter: blur(10px);
+        opacity: 0;
+        transition: all 1.2s ease-out;
+        z-index: 99999;
+    }
+
+    /* Screen warp effect */
+    .warp {
+        transform: scale(0) rotate(1080deg);
+        filter: blur(20px);
+    }
 </style>
 </head>
 <body>
 
-<!-- ✨ EDIT TEXT HERE ✨ -->
-<div class="flying-text" style="top: 20%; left: 5%;">Dude...</div>
-<div class="flying-text" style="top: 60%; left: 10%; animation-duration: 12s;">
-    Sweet..
+<div id="portal"></div>
+
+<!-- ✨ CLICKABLE FLYING TEXT ✨ -->
+<div class="flying-text" style="top: 20%; left: 5%;" onclick="spinPortal()">
+    Dude...
 </div>
 
-<!-- ✨ EDIT IMAGE URLS HERE ✨ -->
+<div class="flying-text" style="top: 60%; left: 10%; animation-duration: 12s;" onclick="spinPortal()">
+    Sweet...
+</div>
+
+<!-- ✨ FLYING IMAGES ✨ -->
 <img class="flying-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Acid_smiley.svg/1024px-Acid_smiley.svg.png" 
      style="top: 70%; left: 50%; animation-duration: 10s;">
 
 <img class="flying-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Psychedelic_art.png/600px-Psychedelic_art.png"
      style="top: 10%; left: 5%; animation-duration: 14s;">
+
+<script>
+function spinPortal() {
+    const portal = document.getElementById("portal");
+
+    // 1. Portal appears & expands
+    portal.style.width = "800px";
+    portal.style.height = "800px";
+    portal.style.opacity = "1";
+    portal.style.transform = "translate(-50%, -50%) scale(1)";
+
+    // 2. Screen spins & shrinks into the portal
+    document.body.classList.add("warp");
+
+    // 3. Redirect after animation
+    setTimeout(() => {
+        window.location.href = "YOUR_HOME_URL_HERE"; 
+        // Example:
+        // window.location.href = "index.html";
+    }, 1500);
+}
+</script>
 
 </body>
 </html>
