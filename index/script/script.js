@@ -36,3 +36,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
+
+
+// SIMPLE PAGE SEARCH ENGINE
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("keyup", () => {
+    const query = searchInput.value.toLowerCase();
+
+    // SELECT EVERYTHING YOU WANT SEARCHABLE
+    const items = document.querySelectorAll(
+      "h1, h2, h3, p, a, .column, .danger-zone"
+    );
+
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      
+      if (text.includes(query)) {
+        item.style.display = "";  // Show
+      } else {
+        item.style.display = "none"; // Hide
+      }
+    });
+  });
+});
+
+
+  
+
