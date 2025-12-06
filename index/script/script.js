@@ -58,3 +58,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Google search functionality
+const searchInput = document.getElementById('searchBar');
+const searchButton = document.getElementById('searchButton');
+
+searchButton.addEventListener('click', () => {
+  const query = searchInput.value.trim();
+  if (query) {
+    // Redirect to Google with the query
+    const googleURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    window.open(googleURL, "_blank");   // Opens in new tab
+  }
+});
+
+// Allow Enter key to trigger search
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    searchButton.click();
+  }
+});
