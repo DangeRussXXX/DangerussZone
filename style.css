@@ -107,7 +107,7 @@
 /* ------------------ SCROLLING MESSAGE LIKE FLYING OBJECT (SMOKE EFFECT) ------------------ */
 .scrolling-message {
     position: absolute;       /* Like flying object */
-    top: 4px;                 /* Vertical position */
+    top: 20px;                 /* Vertical position */
     left: 0%;                 /* Start off-screen left */
     white-space: nowrap;
     font-size: 2.5rem;
@@ -118,7 +118,7 @@
         0 0 10px rgba(255,255,255,0.2),
         0 0 20px rgba(200,200,200,0.1);
     z-index: 1000;            /* Above other content */
-    animation: flySmoke 15s linear infinite, smokeFlicker 3s ease-in-out infinite;
+    animation: flySmoke 10s linear infinite, smokeFlicker 3s ease-in-out infinite;
 }
 
 /* Links inside scrolling message */
