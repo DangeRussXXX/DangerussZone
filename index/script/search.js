@@ -7,19 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Clicking the danger button triggers Google search
   searchTrigger.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default link jump
+    e.preventDefault();
     const query = searchInput.value.trim();
     if (query) {
       window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank");
     }
   });
 
-  // Pressing Enter in the input triggers the same search
+  // Pressing Enter triggers search
   searchInput.addEventListener('keydown', (e) => {
     if (e.key === "Enter") searchTrigger.click();
   });
 
-  // Optional: Voice search
+  // Voice search
   if (mic && 'webkitSpeechRecognition' in window) {
     mic.addEventListener('click', () => {
       const recognition = new webkitSpeechRecognition();
