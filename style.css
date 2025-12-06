@@ -104,17 +104,21 @@
 
 
 /* ------------------ SCROLLING MESSAGE LIKE FLYING OBJECT ------------------ */
+/* ------------------ SCROLLING MESSAGE LIKE FLYING OBJECT (SMOKE EFFECT) ------------------ */
 .scrolling-message {
     position: absolute;       /* Like flying object */
     top: 30%;                 /* Vertical position */
-    left: 0%;              /* Start off-screen left */
+    left: 0%;                 /* Start off-screen left */
     white-space: nowrap;
     font-size: 2.5rem;
     font-weight: bold;
     color: white;
-    text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 30px #ff9900;
+    text-shadow:
+        0 0 5px rgba(255,255,255,0.3),
+        0 0 10px rgba(255,255,255,0.2),
+        0 0 20px rgba(200,200,200,0.1);
     z-index: 1000;            /* Above other content */
-    animation: flyMessage 15s linear infinite;  /* Continuous scroll */
+    animation: flySmoke 15s linear infinite, smokeFlicker 3s ease-in-out infinite;
 }
 
 /* Links inside scrolling message */
@@ -129,10 +133,28 @@
 }
 
 /* Animation: scroll from left to right, looping */
-@keyframes flyMessage {
-    0% { transform: translateX(-100%); }  /* Start completely left */
-    100% { transform: translateX(100vw); } /* End completely right */
+@keyframes flySmoke {
+    0% { transform: translateX(-100%) translateY(0); opacity: 0.8; }
+    50% { transform: translateX(50vw) translateY(-2px); opacity: 0.9; }
+    100% { transform: translateX(100vw) translateY(0); opacity: 0.8; }
 }
+
+/* Subtle flickering smoke effect */
+@keyframes smokeFlicker {
+    0% { text-shadow:
+        0 0 5px rgba(255,255,255,0.3),
+        0 0 10px rgba(255,255,255,0.2),
+        0 0 20px rgba(200,200,200,0.1); }
+    50% { text-shadow:
+        0 0 8px rgba(255,255,255,0.4),
+        0 0 15px rgba(255,255,255,0.25),
+        0 0 25px rgba(200,200,200,0.15); }
+    100% { text-shadow:
+        0 0 5px rgba(255,255,255,0.3),
+        0 0 10px rgba(255,255,255,0.2),
+        0 0 20px rgba(200,200,200,0.1); }
+}
+
 
 /* ------------------ NAVIGATION-TABS ------------------ */
 nav {
